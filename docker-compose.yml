@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  social-media-studio:
+    build: .
+    container_name: flyrank-social-studio
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - DATABASE_PATH=/app/data/social_studio.db
+      - DEFAULT_PUBLISHER_ADAPTER=mock_x
+    volumes:
+      - studio-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  studio-data:
