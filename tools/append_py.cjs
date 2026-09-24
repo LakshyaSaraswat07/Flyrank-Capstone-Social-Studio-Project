@@ -1,0 +1,1 @@
+const fs = require('fs'); fs.appendFileSync('tools/build_suite.py', Buffer.from(process.argv[2], 'base64').toString('utf8'));
